@@ -36,19 +36,14 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+      - name: Deploy
+        run: npm start
 
   # Deployment job
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url:  http://localhost:4200/ 
     runs-on: ubuntu-latest
     needs: build
-    steps:
-      - uses: chrnorm/deployment-action@v2
-        name: Create GitHub deployment
-        id: deployment
-        with:
-          token: '${{ github.token }}'
-          environment-url: http://JaymesEmmy/HelloWorld.com
-          environment: github-pages
+    
