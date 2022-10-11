@@ -41,7 +41,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://jaymesemmy.github.io/HelloWorldTest/hello-wolrd-test/index.html
+      url: https://jaymesemmy.github.io/HelloWorldTest/dist/hello-wolrd-test/index.html
     runs-on: ubuntu-latest
     needs: build
     concurrency: github-pages
