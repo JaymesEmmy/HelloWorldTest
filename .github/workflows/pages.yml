@@ -44,8 +44,8 @@ jobs:
        - uses: actions/download-artifact@v3
          with:
            name: github-pages 
-           path: _build
-       # Deploy it to Github pages
+           path: ./dist/hello-world-test/index.html
+           # Deploy it to Github pages
        - name: Deploy to GitHub Pages 🚀
          uses: JamesIves/github-pages-deploy-action@v4.3.0
          with:
