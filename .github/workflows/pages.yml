@@ -58,6 +58,6 @@ jobs:
          uses: JamesIves/github-pages-deploy-action@v4.3.0
          with:
            branch: gh-pages
-           folder: index.html
+           folder: ./dist/hello-world-test/index.html
 
         
