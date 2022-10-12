@@ -58,6 +58,6 @@ jobs:
          uses: JamesIves/github-pages-deploy-action@v4.3.0
          with:
            branch: gh-pages
-           folder: _build/html
+           folder: index/html
 
         
