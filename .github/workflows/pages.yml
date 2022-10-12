@@ -46,14 +46,18 @@ jobs:
     needs: build
     concurrency: github-pages
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-      - name: "Deploy Github Pages"
-        uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages     # <- Branche sur laquelle seront commités les fichiers
-          FOLDER: build/html/  # <- Dossier contenant notre documentation générée
+        # Checkout from main
+       - uses: actions/checkout@v2
+       # Download the artifact from previous job
+       - uses: actions/download-artifact@v3
+         with:
+           name: build-artifact
+           path: _build
+       # Deploy it to Github pages
+       - name: Deploy to GitHub Pages 🚀
+         uses: JamesIves/github-pages-deploy-action@v4.3.0
+         with:
+           branch: gh-pages
+           folder: _build/html
 
         
