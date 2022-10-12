@@ -40,8 +40,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-        # Checkout from main
-       - uses: actions/checkout@v2
        # Download the artifact from previous job
        - uses: actions/download-artifact@v3
          with:
